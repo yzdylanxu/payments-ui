@@ -1,5 +1,4 @@
 import React from 'react';
-import PageHeader from "../pageHeader/PageHeader";
 
 import Search from "./Search/Search"
 import Transactions from "./Transactions/Transactions";

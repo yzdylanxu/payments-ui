@@ -82,7 +82,7 @@ const Transactions = (props) => {
             setPayments([]);
             loadCountries();
         }
-    }, [selectedOrder]);
+    }, [selectedOrder, loadTransactionsForSelectedOrder]);
 
     const changeCountry = (e) => {
         const option = e.target.options.selectedIndex - 1;

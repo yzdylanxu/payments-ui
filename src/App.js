@@ -6,7 +6,6 @@ import {BrowserRouter, Switch, Route} from "react-router-dom";
 import PageHeader from "./components/pageHeader/PageHeader";
 import HomePage from "./components/HomePage/HomePage";
 import PageNotFound from "./components/PageNotFound/PageNotFound";
-import {createContext, useState} from "react";
 import {UserContext} from "./components/context/Context";
 import Login from "./components/Login";
 
