@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-let serverURL = "https://payment-gateway-mattt-payments.apps.openshift4demo.xwun.p1.openshiftapps.com";
+let serverURL = "localhost";
 
 export const getAllPaymentsForCountry = (country) => {
     return axios({url : `${serverURL}/api/payment?country=${country}`, method: "GET", headers : {'Accept': 'application/json'} });
