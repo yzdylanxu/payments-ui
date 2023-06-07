@@ -6,31 +6,13 @@ import {BrowserRouter, Switch, Route} from "react-router-dom";
 import PageHeader from "./components/pageHeader/PageHeader";
 import HomePage from "./components/HomePage/HomePage";
 import PageNotFound from "./components/PageNotFound/PageNotFound";
-import {UserContext} from "./components/context/Context";
-import Login from "./components/Login";
-import {useState} from "react";
 
 function App() {
 
-    const [user,setUser] = useState({id: 0, name : "", role : ""})
-
-    const login = (newUser) => {
-        //simulate getting a user from a remote source
-        setUser(newUser);
-    }
-
-    const logout = () => {
-        setUser({id: 0, name : "", role : ""});
-    }
-
     return (
-        <UserContext.Provider value={{...user, login : login, logout : logout}}>
         <BrowserRouter>
             <PageHeader/>
             <Switch>
-                <Route path="/login">
-                    <Login/>
-                </Route>
                 <Route path="/add">
                     <AddTransactionPage/>
                 </Route>
@@ -46,7 +28,6 @@ function App() {
 
             </Switch>
         </BrowserRouter>
-        </UserContext.Provider>
     );
 }
 

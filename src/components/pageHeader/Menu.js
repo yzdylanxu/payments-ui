@@ -1,17 +1,12 @@
 import {Link} from "react-router-dom";
-import {useContext} from "react";
-import {UserContext} from "../context/Context";
-
 
 const Menu = () => {
-
-    const userContext = useContext(UserContext);
 
     return (
         <ul className="nav">
             <li><Link to="/find">Find a transaction</Link></li>
             <li><Link to="/add">New transaction</Link></li>
-            {userContext.id === 0 && <li><Link to="/login">Log in</Link></li>}
+            <li><a href="http://localhost:8080/swagger-ui.html" target="_blank">Swagger</a></li>
         </ul>
     );
 }

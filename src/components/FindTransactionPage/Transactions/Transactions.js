@@ -22,7 +22,7 @@ const Transactions = (props) => {
     const loadCountries = () =>  {
         getCountries()
             .then(response => {
-                const allCountries = response.data.country;
+                const allCountries = response.data;
                 setUniqueCountries(allCountries);
                 setCountryOptions(allCountries.map(c => <option key={c} value={c}>{c}</option>));
             })
@@ -82,7 +82,7 @@ const Transactions = (props) => {
             setPayments([]);
             loadCountries();
         }
-    }, [selectedOrder, loadTransactionsForSelectedOrder]);
+    }, [selectedOrder]);
 
     const changeCountry = (e) => {
         const option = e.target.options.selectedIndex - 1;
