@@ -1,8 +1,8 @@
 import axios from 'axios';
 
 let serverURL = "localhost";
-if (process.env.COMPONENT_QUARKUS_BACKEND_HOST) {
-   serverURL=process.env.COMPONENT_QUARKUS_BACKEND_HOST
+if (process.env.PAYMENTS_SERVER_URL) {
+   serverURL=process.env.PAYMENTS_SERVER_URL
 }
 
 export const getAllPaymentsForCountry = (country) => {
