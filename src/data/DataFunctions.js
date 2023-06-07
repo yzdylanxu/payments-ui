@@ -1,24 +1,21 @@
 import axios from 'axios';
 
-let serverURL = "localhost";
-if (process.env.PAYMENTS_SERVER_URL) {
-   serverURL=process.env.PAYMENTS_SERVER_URL
-}
+let serverURL = "https://payment-gateway-mattt-payments.apps.openshift4demo.xwun.p1.openshiftapps.com";
 
 export const getAllPaymentsForCountry = (country) => {
-    return axios({url : `https://${serverURL}/api/cctransaction?country=${country}`, method: "GET", headers : {'Accept': 'application/json'} });
+    return axios({url : `${serverURL}/api/cctransaction?country=${country}`, method: "GET", headers : {'Accept': 'application/json'} });
 }
 
 export const getAllPaymentsForOrderId = (orderId) => {
-    return axios({url : `https://${serverURL}/api/cctransaction?order=${orderId}`, method: "GET", headers : {'Accept': 'application/json'} });
+    return axios({url : `${serverURL}/api/cctransaction?order=${orderId}`, method: "GET", headers : {'Accept': 'application/json'} });
 }
 
 export const getCountries = () => {
-    return axios.request({url : `http://${serverURL}/api/countries`, method: "GET", headers : {'Accept': 'application/json'} });
+    return axios.request({url : `${serverURL}/api/countries`, method: "GET", headers : {'Accept': 'application/json'} });
 }
 
 export const addNewTransaction = (payment) => {
-    return axios({url : `http://${serverURL}/api/cctransaction`,
+    return axios({url : `${serverURL}/api/cctransaction`,
         method: "POST",
         headers : {'Accept': 'application/json', 'Content-Type' : 'application/json'},
         data: payment});
