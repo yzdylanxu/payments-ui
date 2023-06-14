@@ -2,8 +2,8 @@ import axios from 'axios';
 
 let serverURL = "http://localhost";
 
-if (process.env.SERVER_URL) {
-    serverURL = process.env.SERVER_URL;
+if (process.env.REACT_APP_SERVER_URL) {
+    serverURL = process.env.REACT_APP_SERVER_URL;
 }
 
 export const getAllPaymentsForCountry = (country) => {
