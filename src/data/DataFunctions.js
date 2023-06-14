@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-let serverURL = "localhost";
+let serverURL = "http://localhost";
 
 if (process.env.SERVER_URL) {
     serverURL = process.env.SERVER_URL;
