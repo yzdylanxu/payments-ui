@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-let serverURL = "http://localhost";
+let serverURL = "https://payments.multicode.uk";
 
 if (process.env.REACT_APP_SERVER_URL) {
     serverURL = process.env.REACT_APP_SERVER_URL;

@@ -2,7 +2,7 @@ import './Transactions.css';
 import {useState, useEffect} from 'react';
 import {getAllPaymentsForCountry, getAllPaymentsForOrderId, getCountries} from '../../../data/DataFunctions';
 import TransactionTableRow from "./TransactionTableRow";
-import {useHistory, useParams, useLocation} from 'react-router-dom';
+import {useNavigate, useParams, useLocation} from 'react-router-dom';
 
 const Transactions = (props) => {
 
@@ -15,7 +15,7 @@ const Transactions = (props) => {
 
     const [selectedOrder, setSelectedOrder] = useState("");
 
-    const history = useHistory();
+    const navigate = useNavigate();
 
 
 
@@ -88,7 +88,7 @@ const Transactions = (props) => {
         const option = e.target.options.selectedIndex - 1;
         setLoading(true);
         setSelectedCountry(uniqueCountries[option]);
-        history.push(`/find?country=${uniqueCountries[option]}`);
+        navigate(`/find?country=${uniqueCountries[option]}`);
     }
 
     const countrySelector = <select id="countrySelector" onChange={changeCountry} defaultValue="xxx">
